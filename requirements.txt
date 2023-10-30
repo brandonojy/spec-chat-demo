@@ -1,0 +1,8 @@
+streamlit
+langchain
+openai
+chromadb
+tiktoken
+docarray
+unstructured
+pysqlite3-binary
