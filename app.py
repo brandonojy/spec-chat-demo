@@ -19,9 +19,9 @@ from langchain.chains import ConversationalRetrievalChain
 
 
 
-chat_model = ChatOpenAI(openai_api_key="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", temperature = 0)
+chat_model = ChatOpenAI(openai_api_key=st.secrets["openai_apikey"], temperature = 0)
 
-embeddings = OpenAIEmbeddings(openai_api_key="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")
+embeddings = OpenAIEmbeddings(openai_api_key=st.secrets["openai_apikey"])
 
 loader1 = UnstructuredHTMLLoader("mas1.html")
 loader2 = UnstructuredHTMLLoader("mas4.html")
