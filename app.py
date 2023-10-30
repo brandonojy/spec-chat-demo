@@ -16,7 +16,9 @@ from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
 from langchain.schema.messages import SystemMessage
 from langchain.prompts import MessagesPlaceholder
 from langchain.chains import ConversationalRetrievalChain
-
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 chat_model = ChatOpenAI(openai_api_key=st.secrets["openai_apikey"], temperature = 0)
