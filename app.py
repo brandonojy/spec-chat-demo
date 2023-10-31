@@ -42,7 +42,9 @@ db = Chroma.from_documents(texts, embeddings)
 
 retriever = db.as_retriever()
 
-memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+msgs = StreamlitChatMessageHistory()
+
+memory = ConversationBufferMemory(memory_key="chat_history", chat_memory=msgs, return_messages=True)
 
 qa = ConversationalRetrievalChain.from_llm(chat_model, retriever, memory=memory)
 
